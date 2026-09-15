@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: #fff;
+  background: url("img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.overlay {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  gap: clamp(1.5rem, 5vh, 4rem);
+  padding: 2rem;
+  padding-top: clamp(2rem, 12vh, 8rem);
+  /* background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.65)
+  ); */
+}
+
+.title {
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.event-date {
+  margin-top: calc(-1 * clamp(1.5rem, 5vh, 4rem) + 0.5rem);
+  font-size: clamp(1.1rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.countdown,
+.finished {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.countdown {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(0.75rem, 3vw, 2.5rem);
+  width: max-content;
+  max-width: 95vw;
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: clamp(4rem, 12vw, 8rem);
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.value {
+  font-size: clamp(2.5rem, 9vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: clamp(0.75rem, 2vw, 1.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.85;
+}
+
+.finished {
+  font-size: clamp(1.5rem, 6vw, 4rem);
+  font-weight: 800;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
